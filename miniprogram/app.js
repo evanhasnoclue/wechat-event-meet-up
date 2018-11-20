@@ -1,14 +1,22 @@
 //app.js
 App({
   onLaunch: function () {
+    console.log('processing to login')
+    wx.login({
+      success: (res) => {
+        console.log(res)
+        wx.request({
+          url: 'http://localhost:3000/api/v1/login',
+          method: "POST",
+          data: {code: res.code},
+          success: (res) => {
+            console.log(res)
+          }
+        })
+        // insert next code here
+      }
+    })
     
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        traceUser: true,
-      })
-    }
 
     this.globalData = {}
   }

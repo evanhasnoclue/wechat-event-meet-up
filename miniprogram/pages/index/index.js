@@ -10,14 +10,7 @@ Page({
     requestResult: ''
   },
 
-  onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
-
+onLoad: function() {
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -37,6 +30,7 @@ Page({
   },
 
   onGetUserInfo: function(e) {
+    console.log(e);
     if (!this.logged && e.detail.userInfo) {
       this.setData({
         logged: true,
