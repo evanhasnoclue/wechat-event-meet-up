@@ -11,6 +11,10 @@ App({
           data: {code: res.code},
           success: (res) => {
             console.log(res)
+            wx.setStorage({
+              key: 'open_id',
+              data: res.data.userId
+            })
           }
         })
         // insert next code here

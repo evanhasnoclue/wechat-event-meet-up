@@ -34,14 +34,32 @@ onLoad: function() {
       wx.setStorage({
         key: 'current_user',
         data: e.detail.userInfo
+      });
+      wx.getStorage({
+        key: 'open_id',
+        success: (res) => {
+          const user_data = {
+            name: e.detail.userInfo.nickName,
+            wechat_id: res.data,
+            avatar: e.detail.userInfo.avatarUrl,
+            gender: e.detail.userInfo.gender,
+            city: e.detail.userInfo.city,
+            province: e.detail.userInfo.province,
+            country: e.detail.userInfo.country
+          };
+          wx.request({
+            url:'http://localhost:3000/api/v1/users',
+            method: 'POST',
+            data: {user_data: user_data},
+            success: (res) => {
+              console.log(res)
+            }
+          })
+          
+        }
       })
     }
-    wx.getStorage({
-      key: 'current_user',
-      success: (res) => {
-        console.log(res.data)
-      }
-    })
+
   },
 
         
