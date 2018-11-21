@@ -65,7 +65,7 @@ Page({
     console.log(this.data.user_id);
     wx.request({
       // url: 'http://localhost:3000/api/v1/events',
-      url:'https://event-meet-up.herokuapp.com/api/v1/events',
+       url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       method: 'POST',
       data: {
         user_id: page.data.user_id,
