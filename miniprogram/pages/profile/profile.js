@@ -60,7 +60,7 @@ Page({
  
  onCreate: function(e) {
    wx.redirectTo({
-     url: 'pages/submit/submit',
+     url: '/pages/submit/submit',
    })
  },
 

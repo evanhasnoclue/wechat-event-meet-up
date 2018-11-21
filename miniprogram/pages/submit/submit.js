@@ -47,19 +47,39 @@ Page({
     });
   },
   
-  
+  onLoad: function() {
+    wx.getStorage({
+      key: 'current_user',
+      success: (res) => {
+        console.log(res),
+          this.setData({
+            user_id: res.data.id
+          })
+      }
+    })
+  },
    
   bindSubmit: function(e) {
+    let page = this;
     console.log(e);
+    console.log(this.data.user_id);
     wx.request({
       url: 'http://localhost:3000/api/v1/events',
       // url:'https://event-meet-up.herokuapp.com/api/v1/events',
       method: 'POST',
-      data: e.detail.value,
+      data: {
+        user_id: page.data.user_id,
+        title: e.detail.value.title,
+        address: e.detail.value.place,
+        time: e.detail.value.time,
+        description: e.detail.value.Description,
+        deadline: e.detail.value.deadline,
+        capacity: e.detail.value.capacity
+      },
       success: (res) => {
         console.log(res)
         wx.redirectTo({
-          url: 'pages/profile/profile',
+          url: '/pages/profile/profile',
         })
       }
     })
