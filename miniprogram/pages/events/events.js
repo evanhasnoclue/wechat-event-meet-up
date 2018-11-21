@@ -33,6 +33,14 @@ Page({
     })
   },
 
+  showEvent(e) {
+      const data = e.currentTarget.dataset;
+      const event = data.event;
+      console.log(event);
+  wx.navigateTo({
+    url: `../show/show?id=${event.id}`
+  });
+},
   /**
    * Lifecycle function--Called when page is initially rendered
    */

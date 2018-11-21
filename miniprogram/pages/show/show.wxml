@@ -1,2 +1,13 @@
 <!--pages/show/show.wxml-->
-<text>pages/show/show.wxml</text>
+<view class='show-container'>
+  <view class='event-intro'>
+  </view>
+  <view class='event-address'>
+  </view>
+  <view class='event-users'>
+  </view>
+  <view class='event-description'>
+  </view>
+  <view class='event-action'>
+  </view>
+</view>

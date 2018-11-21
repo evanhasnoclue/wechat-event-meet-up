@@ -44,18 +44,13 @@
 				{
 					"id": -1,
 					"name": "submit",
-					"pathName": "pages/submit/submit"
-        },
-        {
-					"id": -1,
-					"name": "profile",
-					"pathName": "pages/profile/profile",
+					"pathName": "pages/submit/submit",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "test",
-					"pathName": "pages/test/test",
+					"name": "profile",
+					"pathName": "pages/profile/profile",
 					"query": ""
 				},
 				{
@@ -67,7 +62,6 @@
 				{
 					"id": -1,
 					"name": "events",
-					"pathName": "pages/events/events"
 				}
 			]
 		}
