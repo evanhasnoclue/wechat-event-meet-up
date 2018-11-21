@@ -7,6 +7,7 @@
                     <view>我的昵称</view>
                     <view style="font-size: 13px;color: #888888;">摘要信息</view>
                 </view>
+                <button class="btn" bindtap="onCreate">New Trip</button>
             </view>
 <view class="page">
     <view class="page__bd">
