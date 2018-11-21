@@ -15,13 +15,19 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    
     "list": [
       {
         "pagePath": "pages/events/events",
+        "iconPath": "images/bus.png",   
+        "selectedIconPath": "images/bus.png",
+                
         "text": "Discover Trips"
       },
       {
         "pagePath": "pages/profile/profile",
+        "iconPath": "images/walk.png",
+       "selectedIconPath": "images/walk.png",
         "text": "Profile"
       }
     ]
