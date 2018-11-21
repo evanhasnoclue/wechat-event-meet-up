@@ -1,5 +1,8 @@
 {
-	"miniprogramRoot": "miniprogram/",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
@@ -7,9 +10,15 @@
 		"minified": true,
 		"newFeature": true
 	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
 	"appid": "wxcfc29582ee6cc5c3",
 	"projectname": "%2Fhome%2Fkaiwang6%2Fcode%2Fwechat%2Fwechat-event-meet-up",
-	"libVersion": "2.2.5",
+	"miniprogramRoot": "miniprogram/",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -55,13 +64,14 @@
 				},
 				{
 					"id": -1,
-					"name": "map",
-					"pathName": "pages/map/map",
+					"name": "test",
+					"pathName": "pages/test/test",
 					"query": ""
 				},
 				{
 					"id": -1,
 					"name": "events",
+					"pathName": "pages/events/events"
 				}
 			]
 		}
