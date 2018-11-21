@@ -1,5 +1,5 @@
 <view class="event-banner">
-<navigator class="banner-link" href="#" >Create Your Event</navigator>
+<navigator class="banner-link" href="/pages/submit/submit" >Create Your Event</navigator>
 </view>
 <block wx:for="{{events}}"
 wx:for-index = "index" wx:for-item= "item">
