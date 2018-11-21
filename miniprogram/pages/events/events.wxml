@@ -1,13 +1,13 @@
-<view class="event-banner">
-<navigator class="banner-link" href="/pages/submit/submit" >Create Your Event</navigator>
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+<button class="btn" bindtap="onCreate">New Trip</button>
 </view>
 <block wx:for="{{events}}"
 wx:for-index = "index" wx:for-item= "item">
 <view class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});">
-    <view class="card-category"> {{item.address}}</view>
+    <view class="card-category"> {{item.description}}</view>
     <view class="card-description">
       <view class="name"> {{item.title}} </view>
-      <view class="tag"> {{item.description}} </view>
+      <view class="tag"> {{item.address}} </view>
     </view>
     <view class="buttons">
       <navigator class="card-link" href="#" >Details</navigator>

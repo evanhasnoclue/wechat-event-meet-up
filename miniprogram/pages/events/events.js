@@ -27,6 +27,11 @@ Page({
       }
     })
   },
+  onCreate: function (e) {
+    wx.redirectTo({
+      url: '/pages/submit/submit',
+    })
+  },
 
   /**
    * Lifecycle function--Called when page is initially rendered
