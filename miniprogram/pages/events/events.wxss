@@ -1,3 +1,13 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 50px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .page__bd{
     height: 100%;
 }
@@ -24,7 +34,8 @@
   background-position: center;
   color: white;
   position: relative;
-  margin-top: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
   /* display: flex;
   justify-content: cspace-between;
   align-items: center */
@@ -75,4 +86,8 @@
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
+}
+.btn{
+  background-color: transparent;
+  color: white
 }

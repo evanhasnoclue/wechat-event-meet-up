@@ -27,6 +27,11 @@ Page({
       }
     })
   },
+  onCreate: function (e) {
+    wx.redirectTo({
+      url: '/pages/submit/submit',
+    })
+  },
 
   showEvent(e) {
       const data = e.currentTarget.dataset;
