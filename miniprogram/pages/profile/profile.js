@@ -57,6 +57,13 @@ Page({
       }
     });
   },
+ 
+ onCreate: function(e) {
+   wx.redirectTo({
+     url: 'pages/submit/submit',
+   })
+ },
+
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
