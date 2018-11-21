@@ -4,8 +4,8 @@
                     <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">6</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <view>我的昵称</view>
-                    <view style="font-size: 13px;color: #888888;">摘要信息</view>
+                    <view>{{profile.nickName}}</view>
+                    <view style="font-size: 13px;color: #888888;">{{profile.province}}{{profile.gender}}</view>
                 </view>
                 <button class="btn" bindtap="onCreate">New Trip</button>
             </view>
@@ -22,20 +22,20 @@
             </view>
             <view class="weui-tab__panel">
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">选项一的内容</view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}"><view wx:for="{{events}}" wx:for-item="event" wx:key="event.id" bindtap="showRestaurant" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{event.image}}');" data-restaurant="{{event}}">
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}"><view wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id" bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
 
   <view class="card-category">
-    {{event.address}}
+    {{voyage.address}}
   </view>
 
   <view class="card-description">
 
     <view class="name">
-      {{event.name}}
+      {{voyage.title}}
     </view>
 
     <view class="tag">
-      {{event.description}}
+      {{voyage.description}}
     </view>
 
   </view>
