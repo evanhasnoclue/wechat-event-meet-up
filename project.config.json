@@ -62,6 +62,7 @@
 				{
 					"id": -1,
 					"name": "events",
+          "query": ""
 				}
 			]
 		}
