@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/profile/profile",
-    "pages/index/index"
-    
+    "pages/index/index",
+    "pages/show/show"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
