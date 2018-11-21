@@ -1,6 +1,6 @@
 <view class="weui-cell">
                 <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-                    <image src="{{profile.avatarUrl}}" style="width: 50px; height: 50px; display: block"/>
+                    <image src="{{profile.avatar}}" style="width: 50px; height: 50px; display: block"/>
                     <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">6</view>
                 </view>
                 <view class="weui-cell__bd">

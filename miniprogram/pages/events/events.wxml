@@ -1,0 +1,20 @@
+<view class="event-banner">
+<navigator class="banner-link" href="/pages/submit/submit" >Create Your Event</navigator>
+</view>
+<block wx:for="{{events}}"
+wx:for-index = "index" wx:for-item= "item">
+<view class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});">
+    <view class="card-category"> {{item.address}}</view>
+    <view class="card-description">
+      <view class="name"> {{item.title}} </view>
+      <view class="tag"> {{item.description}} </view>
+    </view>
+    <view class="buttons">
+      <navigator class="card-link" href="#" >Details</navigator>
+    </view>
+</view>
+</block> 
+
+
+
+
