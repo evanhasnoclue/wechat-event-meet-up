@@ -12,22 +12,26 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log("loading");
     let page = this;
-    // console.log(1, options);
-    wx.request({
-      url: 'http://localhost:3000/api/v1/events/' + options.id,
-      method: 'GET',
-      success: (res) => {
-        page.setData({user_id: 0, data: res.data})
-      }
-    });
+    let current_user = 0;
     wx.getStorage({
       key: 'current_user',
       success(res) {
-        page.user_id = res.data.id
-        console.log(12, page.user_id)
+        console.log(res)
+        current_user = res.data.id
+        console.log(12, current_user)
       }
-    })
+    });
+    // console.log(1, options);
+    wx.request({
+      url: 'https://event-meet-up.herokuapp.com/api/v1/events/'+options.id,
+      // url: 'http://localhost:3000/api/v1/events/' + options.id,
+      method: 'GET',
+      success: (res) => {
+        page.setData({user_id: current_user, data: res.data})
+      }
+    });
   },
 
   /**
@@ -97,5 +101,24 @@ Page({
         })
       }
     })
+  },
+  comment() {
+    // const data = e.currentTarget.dataset;
+    // const event = data.event;
+    // console.log(event);
+    let booked_user = [];
+    this.data.data.bookings.forEach((i) => {
+      booked_user.push(i.user.id)
+    });
+    console.log(15, booked_user);
+    console.log(13, this.data);
+    console.log(14, this.user_id);
+    if (booked_user.includes(this.user_id)) {
+      wx.redirectTo({
+        url: '/pages/review/review',
+      })}
+    else {
+      console.log("user not joined yet")
+    }
   }
 })
