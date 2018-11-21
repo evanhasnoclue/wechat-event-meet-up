@@ -57,12 +57,11 @@ Page({
       url: "http://localhost:3000/api/v1/events",
       method: 'GET',
       success(res) {
-        const events = res.data.events;
+        const voyages = res.data.events;
 
         // Update local data
-        console.log(events);
         that.setData({
-          voyages: events,
+          voyages
         });
 
         // wx.hideToast();
