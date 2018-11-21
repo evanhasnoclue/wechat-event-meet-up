@@ -54,8 +54,8 @@ onLoad: function() {
                 key: 'current_user',
                 data: res.data,
               });
-              wx.redirectTo({
-                url: '/pages/profile/profile',
+              wx.switchTab({
+                url: '/pages/events/events',
               })
             }
           })

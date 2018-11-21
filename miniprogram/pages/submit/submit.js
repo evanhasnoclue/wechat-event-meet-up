@@ -78,7 +78,7 @@ Page({
       },
       success: (res) => {
         console.log(res)
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/profile/profile',
         })
       }
