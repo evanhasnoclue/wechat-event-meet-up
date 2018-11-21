@@ -31,10 +31,6 @@ onLoad: function() {
 
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
-      wx.setStorage({
-        key: 'current_user',
-        data: e.detail.userInfo
-      });
       wx.getStorage({
         key: 'open_id',
         success: (res) => {
@@ -54,6 +50,10 @@ onLoad: function() {
             data: {user_data: user_data},
             success: (res) => {
               console.log(res);
+              wx.setStorage({
+                key: 'current_user',
+                data: res.data,
+              });
               wx.redirectTo({
                 url: '/pages/profile/profile',
               })
