@@ -71,7 +71,8 @@
 				{
 					"id": -1,
 					"name": "events",
-					"pathName": "pages/events/events"
+					"pathName": "pages/events/events",
+          "query": ""
 				}
 			]
 		}

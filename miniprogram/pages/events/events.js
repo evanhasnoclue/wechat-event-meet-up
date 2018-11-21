@@ -20,7 +20,8 @@ Page({
     const page = this;
     // Update local data
     wx.request({
-      url: 'http://localhost:3000/api/v1/events',
+      // url: 'http://localhost:3000/api/v1/events',
+      url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       success(res) {
         page.setData(res.data),
         console.log(page.data.events[0])
