@@ -11,3 +11,4 @@
   <view class='event-action'>
   </view>
 </view>
+<button class="btn" bindtap="createBooking">Join</button>
