@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/profile/profile",
-    "pages/index/index"
-    
+    "pages/index/index",
+    "pages/submit/submit",
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

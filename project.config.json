@@ -43,6 +43,11 @@
 				},
 				{
 					"id": -1,
+					"name": "submit",
+					"pathName": "pages/submit/submit"
+        },
+        {
+					"id": -1,
 					"name": "profile",
 					"pathName": "pages/profile/profile",
 					"query": ""
