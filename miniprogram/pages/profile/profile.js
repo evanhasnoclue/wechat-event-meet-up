@@ -25,7 +25,8 @@ Page({
     })
 
     wx.request({
-      url: "http://localhost:3000/api/v1/events",
+     // url: "http://localhost:3000/api/v1/events",
+      url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       method: 'GET',
       success(res) {
         const voyages = res.data.events;
