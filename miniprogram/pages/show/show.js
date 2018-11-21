@@ -12,7 +12,14 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log(options);
+    wx.request({
+      url: 'http://localhost:3000/api/v1/events/' + options.id,
+      method: 'GET',
+      success: (res) => {
+        console.log(res)
+      }
+    })
   },
 
   /**
