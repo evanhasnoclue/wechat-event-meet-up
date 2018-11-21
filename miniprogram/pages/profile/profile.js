@@ -40,6 +40,14 @@ Page({
   },
   onLoad: function () {
     var that = this;
+    wx.getStorage({
+      key: 'current_user',
+      success: (res) => {
+        const profile = res.data;
+        that.setData({profile:profile})
+        console.log(profile)
+      }
+    })
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
