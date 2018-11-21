@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/map/map",
+    "pages/events/events",
     "pages/show/show",
     "pages/submit/submit",
     "pages/profile/profile"
@@ -9,7 +11,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "Travel With Me",
     "navigationBarTextStyle": "black"
   }
 }
