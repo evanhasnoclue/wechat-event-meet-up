@@ -43,11 +43,31 @@ Page({
     wx.getStorage({
       key: 'current_user',
       success: (res) => {
+        if (res.data.gender=="2")
+          {res.data.gender="女"}
+        if (res.data.gender=="1")
+          {res.data.gender="男"}
         const profile = res.data;
         that.setData({profile:profile})
         console.log(profile)
       }
     })
+
+    wx.request({
+      url: "http://localhost:3000/api/v1/events",
+      method: 'GET',
+      success(res) {
+        const events = res.data.events;
+
+        // Update local data
+        console.log(events);
+        that.setData({
+          voyages: events,
+        });
+
+        // wx.hideToast();
+      }
+    });
     wx.getSystemInfo({
       success: function (res) {
         that.setData({

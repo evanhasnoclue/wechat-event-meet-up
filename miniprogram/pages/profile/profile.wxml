@@ -4,8 +4,8 @@
                     <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">6</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <view>我的昵称</view>
-                    <view style="font-size: 13px;color: #888888;">摘要信息</view>
+                    <view>{{profile.nickName}}</view>
+                    <view style="font-size: 13px;color: #888888;">{{profile.province}}{{profile.gender}}</view>
                 </view>
                 <button class="btn" bindtap="onCreate">New Trip</button>
             </view>
