@@ -13,5 +13,19 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "Travel With Me",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/events/events",
+        "text": "Discover Trips"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "Profile"
+      }
+    ]
   }
+
 }
+
