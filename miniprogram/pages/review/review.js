@@ -1,4 +1,4 @@
-// pages/events/events.js
+// pages/review/review.js
 Page({
 
   /**
@@ -12,36 +12,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    wx.showToast({
-      title: 'Updating',
-      icon: 'success',
-      duration: 3000
-    });
-    const page = this;
-    // Update local data
-    wx.request({
-      url: 'http://localhost:3000/api/v1/events',
-      // url: 'https://event-meet-up.herokuapp.com/api/v1/events',
-      success(res) {
-        page.setData(res.data),
-        console.log(page.data.events[0])
-      }
-    })
-  },
-  onCreate: function (e) {
-    wx.redirectTo({
-      url: '/pages/submit/submit',
-    })
+
   },
 
-  showEvent(e) {
-      const data = e.currentTarget.dataset;
-      const event = data.event;
-      console.log(event);
-  wx.navigateTo({
-    url: `../show/show?id=${event.id}`
-  });
-},
   /**
    * Lifecycle function--Called when page is initially rendered
    */
