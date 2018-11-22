@@ -42,7 +42,7 @@
         <view class='review-info'>
           <view class="review-rating">{{review.rating}}</view>
           <view class="review-title">{{review.title}}</view>
-          <view class="review-user">{{review.booking.user_id}}</view>
+          <image src="{{review.booking_user.avatar}}" class='review-user user-avatar' />
         </view>
         <view class="review-content">{{review.content}}</view>
       </view>
