@@ -34,6 +34,7 @@ onLoad: function() {
       wx.getStorage({
         key: 'open_id',
         success: (res) => {
+          console.log(res);
           const user_data = {
             name: e.detail.userInfo.nickName,
             wechat_id: res.data,
