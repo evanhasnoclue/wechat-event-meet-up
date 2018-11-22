@@ -5,7 +5,8 @@ Page({
    * Page initial data
    */
   data: {
-
+    stars: [0,1,2,3,4,5],
+    starIndex: 5,
   },
 
   /**
@@ -13,6 +14,19 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+
+  bindSubmit: function(e) {
+    console.log(e);
+  },
+
+  bindStarChange: function (e) {
+    console.log('picker star 发生选择改变，携带值为', e.detail.value);
+
+    this.setData({
+      starIndex: e.detail.value
+    })
   },
 
   /**

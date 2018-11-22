@@ -35,6 +35,7 @@ Page({
         that.setData({
           voyages
         });
+        console.log(that);
 
         // wx.hideToast();
       }
@@ -60,5 +61,12 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-  }
+  },
+
+  saveTel: function (data) {
+    console.log('data', data)
+    let tel = data.detail.value
+    console.log('saveTel', tel)
+  },
+  
 });
