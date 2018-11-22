@@ -1,2 +1,17 @@
 <!--pages/map/map.wxml-->
-<map longitude="{{longitude}}" latitude="{{latitude}}" scale= "{{scale}}" style="width: 100%; height: 80vh;" markers="{{mk}}"></map>
+<map  bindmarkertap="markertap" longitude="{{longitude}}" latitude="{{latitude}}" scale= "{{scale}}" style="width: 100%; height: 60vh;" markers="{{mk}}"></map>
+
+<scroll-view  style="width: 100%; height: 40vh;" scroll-y>
+
+<view wx:for="{{events}}"
+wx:for-index = "index" wx:for-item= "item" wx:for-key="item.id"  bindtap='showEvent' class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});" data-event="{{item}}">
+    <view class="card-category"> {{item.address}}</view>
+    <view class="card-description">
+      <view class="name"> {{item.title}} </view>
+      <view class="tag"> {{item.address}} </view>
+    </view>
+    <!-- <view class="buttons">
+      <navigator class="card-link" url="/pages/show/show" >Details</navigator>
+    </view> -->
+</view>
+</scroll-view>
