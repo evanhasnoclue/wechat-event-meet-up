@@ -129,8 +129,8 @@ Page({
     console.log(101, region_s);
     // Update local data
     wx.request({
-      url: 'http://localhost:3000/api/v1/tagged?tag='+region_s,
-      // url: 'https://event-meet-up.herokuapp.com/api/v1/tagged?tag='+region_s,
+      // url: 'http://localhost:3000/api/v1/tagged?tag='+region_s,
+      url: 'https://event-meet-up.herokuapp.com/api/v1/tagged?tag='+region_s,
       success(res) {
         console.log(111, res.data)
         page.setData(res.data)

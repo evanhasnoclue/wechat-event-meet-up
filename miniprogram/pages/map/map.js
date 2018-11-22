@@ -136,6 +136,14 @@ Page({
   onReachBottom: function () {
 
   },
+  showEvent(e) {
+    const data = e.currentTarget.dataset;
+    const event = data.event;
+    console.log(event);
+    wx.navigateTo({
+      url: `../show/show?id=${event.id}`
+    });
+  },
 
   /**
    * Called when user click on the top right corner to share
