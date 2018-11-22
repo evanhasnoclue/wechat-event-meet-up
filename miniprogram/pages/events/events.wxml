@@ -1,18 +1,36 @@
-<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-<button class="btn" bindtap="onCreate">New Trip</button>
-</view>
+<view class="page">
+  <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <button class="btn" bindtap="onCreate">New Trip</button>
+  </view>
+
+
+    <view class="pickers">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <button type="default" class='picker-btn'>Select Region</button>
+        </picker>
+            <!-- <picker  mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                <button type="default" class='picker-btn'>Date</button>
+            </picker> -->
+            <button  bindtap="onMap" class='picker-btn' id='map'>View on map</button>
+  </view>
+
+
+
+
 
 <view wx:for="{{events}}"
-wx:for-index = "index" wx:for-item= "item" wx:for-key="item.id" wx:key="item.id"  bindtap='showEvent' class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});" data-event="{{item}}">
+wx:for-index = "index" wx:for-item= "item" wx:for-key="item.id" wx:key="item.id" bindtap='showEvent' class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});" data-event="{{item}}">
+    <view class="card-avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.user.avatar}});"></view>
     <view class="card-category"> {{item.address}}</view>
     <view class="card-description">
       <view class="name"> {{item.title}} </view>
-      <view class="tag"> {{item.address}} </view>
+      <view class="tag"> {{item.description}} </view>
     </view>
-    <!-- <view class="buttons">
-      <navigator class="card-link" url="/pages/show/show" >Details</navigator>
-    </view> -->
+    
 </view>
+
+</view>
+
 
 
 

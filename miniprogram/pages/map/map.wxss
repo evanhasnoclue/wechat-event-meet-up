@@ -1,1 +1,94 @@
-/* pages/map/map.wxss */
+.banner {
+  color: white;
+  text-align: center;
+  height: 50px;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.profilebox{
+  height: 100px;
+  width:100px;
+}
+/* pages/test/test.wxss */
+/**index.wxss**/
+
+/* Cards */
+.card {
+  height: 100px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 10px;
+  /* display: flex;
+  justify-content: cspace-between;
+  align-items: center */
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description .name {
+  font-size: 24px;
+}
+.card-description .tag {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.event-banner {
+  display: flex;
+  justify-content: center;
+  height:30px;
+  font-size: 18px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.buttons {
+  /* height: 10px;
+  width: 20px; */
+ 
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+   background-color: rgba(0,0,0,0.6);
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.btn{
+  background-color: transparent;
+  color: white
+}
+
