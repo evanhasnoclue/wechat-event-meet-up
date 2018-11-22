@@ -19,8 +19,7 @@
 
 
 <view wx:for="{{events}}"
-wx:for-index = "index" wx:for-item= "item" wx:for-key="item.id"  bindtap='showEvent' class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});" data-event="{{item}}">
-
+wx:for-index = "index" wx:for-item= "item" wx:for-key="item.id" wx:key="item.id" bindtap='showEvent' class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.photo}});" data-event="{{item}}">
     <view class="card-avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{item.user.avatar}});"></view>
     <view class="card-category"> {{item.address}}</view>
     <view class="card-description">

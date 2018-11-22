@@ -27,27 +27,28 @@
       </view>
       <view class="weui-tab__panel">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                  <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id" ><block wx:for="{{voyage.bookings}}" wx:for-item="booking" wx:key="booking.id">
-            <block if wx:if="{{profile.id==booking.user_id}}" >
-                      <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
+          <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id">
+            <block wx:for="{{voyage.bookings}}" wx:for-item="booking" wx:key="booking.id">
+              <block if wx:if="{{profile.id==booking.user_id}}">
+                <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
 
-            <view class="card-category">
-              {{voyage.address}}
-            </view>
+                  <view class="card-category">
+                    {{voyage.address}}
+                  </view>
 
-            <view class="card-description">
+                  <view class="card-description">
 
-              <view class="name">
-                {{voyage.title}}
-              </view>
+                    <view class="name">
+                      {{voyage.title}}
+                    </view>
 
-              <view class="tag">
-                {{voyage.description}}
-              </view>
+                    <view class="tag">
+                      {{voyage.description}}
+                    </view>
 
-            </view>
-          </view>
-            
+                  </view>
+                </view>
+
               </block>
             </block>
           </block>
@@ -71,27 +72,32 @@
 
             </view>
           </view> </block> -->
-          <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id" >
-            <block if wx:if="{{profile.id==voyage.user.id}}" >
-                      <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
 
-            <view class="card-category">
-              {{voyage.address}}
-            </view>
+          <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id">
+            <block if wx:if="{{profile.id==voyage.user.id}}">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{voyage.id}}" actions="{{actions}}">
+                <view slot="content">
+                
+                  <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
 
-            <view class="card-description">
+                    <view class="card-category">
+                      {{voyage.address}}
+                    </view>
 
-              <view class="name">
-                {{voyage.title}}
-              </view>
+                    <view class="card-description">
 
-              <view class="tag">
-                {{voyage.description}}
-              </view>
+                      <view class="name">
+                        {{voyage.title}}
+                      </view>
 
-            </view>
-          </view>
-            
+                      <view class="tag">
+                        {{voyage.description}}
+                      </view>
+
+                    </view>
+                  </view>
+                </view>
+              </i-swipeout>
             </block>
           </block>
         </view>
