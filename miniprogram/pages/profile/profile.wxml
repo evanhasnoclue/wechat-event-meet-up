@@ -72,20 +72,10 @@
 
             </view>
           </view> </block> -->
-          <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
-            <view slot="content">
-              hhhh
-              <!-- <i-cell 
-                i-class="i-cell-padding" 
-                title="猛虫过江" 
-                label="侏罗纪世界主题公园及豪华度假村被失控的恐龙们摧毁已有四年">
-            </i-cell> -->
-            </view>
-          </i-swipeout>
+
           <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id">
             <block if wx:if="{{profile.id==voyage.user.id}}">
-            aaaaaaaa
-              <i-swipeout i-class="i-swipeout-demo-item" actions="{{actions}}">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{voyage.id}}" actions="{{actions}}">
                 <view slot="content">
                 
                   <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
