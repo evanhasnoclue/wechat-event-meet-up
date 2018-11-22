@@ -1,7 +1,39 @@
+const app = getApp()
+const AV = require('../../utils/ av-weapp-min.js');
 Page({
+  takePhoto: function () {
+    let that = this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths
+        that.data.imageData = tempFilePaths
+        that.setData(that.data)
+        
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePaths[0],
+          },
+        }).save().then(
+          file => console.log(file.url())
+        ).catch(console.error);
+      }
+    })
+  },
+
+  previewMyImage: function (files) {
+    console.log(files.currentTarget)
+    console.log(this.data.imageData)
+    wx.previewImage({
+      current: files.currentTarget.id,  // number of index or file path
+      urls: this.data.imageData  // Array of temp files
+    })
+  },
   data: {
     showTopTips: false,
-
+  imageData:[],
     radioItems: [
       { name: 'cell standard', value: '0' },
       { name: 'cell standard', value: '1', checked: true }
@@ -11,8 +43,11 @@ Page({
       { name: 'standard is dealicient for u.', value: '1' }
     ],
 
-    date: "2016-09-01",
+    date1: "2018-09-01",
+    date2: "2018-09-10",
     time: "12:01",
+    region: ['上海', '上海市', '静安区'],
+    customItem: '全部',
 
     countryCodes: ["+86", "+80", "+84", "+87"],
     countryCodeIndex: 0,
@@ -26,6 +61,16 @@ Page({
     isAgree: false
   },
   
+  bindDateChange1: function (e) {
+    this.setData({
+      date1: e.detail.value
+    })
+  },
+  bindDateChange2: function (e) {
+    this.setData({
+      date2: e.detail.value
+    })
+  },
   
   checkboxChange: function (e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
@@ -48,6 +93,7 @@ Page({
   },
   
   onLoad: function() {
+
     wx.getStorage({
       key: 'current_user',
       success: (res) => {
@@ -56,6 +102,13 @@ Page({
             user_id: res.data.id
           })
       }
+    })
+  },
+   
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
     })
   },
    
