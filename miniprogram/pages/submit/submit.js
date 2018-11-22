@@ -2,6 +2,7 @@ const app = getApp()
 const AV = require('../../utils/ av-weapp-min.js');
 Page({
   takePhoto: function () {
+    let photo_url = ""
     let that = this
     wx.chooseImage({
       count: 1,
@@ -17,10 +18,19 @@ Page({
             uri: tempFilePaths[0],
           },
         }).save().then(
-          file => console.log(file.url())
+          file => {
+            console.log(100, file.url())
+            photo_url = file.url()
+            that.setData({
+              photo_url: photo_url
+            })
+            console.log(102,that.data)
+            console.log(103, that.data.photo_url)
+          }
         ).catch(console.error);
       }
     })
+    console.log(101, that.data.photo_url)
   },
 
   previewMyImage: function (files) {
@@ -127,7 +137,9 @@ Page({
         time: e.detail.value.time,
         description: e.detail.value.Description,
         deadline: e.detail.value.deadline,
-        capacity: e.detail.value.capacity
+        capacity: e.detail.value.capacity,
+        photo:page.data.photo_url,
+        tag_list:page.data.region
       },
       success: (res) => {
         console.log(res)
