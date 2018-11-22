@@ -25,7 +25,7 @@ Page({
     });
     // console.log(1, options);
     wx.request({
-      url: 'https://event-meet-up.herokuapp.com/api/v1/events/'+options.id,
+      url: 'https://event-meet-up.herokuapp.com/api/v1/events/' + options.id,
       // url: 'http://localhost:3000/api/v1/events/' + options.id,
       method: 'GET',
       success: (res) => {
@@ -86,7 +86,8 @@ Page({
     let page = this;
     // console.log(3, e);
     const event_id = page.data.data.id;
-    const user_id = page.user_id;
+    const user_id = page.data.user_id;
+    console.log(20, user_id);
     // const url = `http://localhost:3000/api/v1/events/${event_id}/bookings`;
     const url = `https://event-meet-up.herokuapp.com/api/v1/events/${event_id}/bookings`;
     wx.request({
@@ -112,8 +113,8 @@ Page({
     });
     console.log(15, booked_user);
     console.log(13, this.data);
-    console.log(14, this.user_id);
-    if (booked_user.includes(this.user_id)) {
+    console.log(14, this.data.user_id);
+    if (booked_user.includes(this.data.user_id)) {
       wx.redirectTo({
         url: '/pages/review/review',
       })}
