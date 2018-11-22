@@ -1,7 +1,7 @@
 <!--pages/review/review.wxml-->
 <form bindsubmit='bindSubmit'>
   <view class='show-container'>
-    <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{data.photo}}');">
+    <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{event.photo}}');">
     </view>
 
     <view class='event-info'>

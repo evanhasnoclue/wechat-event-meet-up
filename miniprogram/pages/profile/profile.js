@@ -10,6 +10,7 @@ Page({
      
   },
   onLoad: function () {
+    console.log('onload');
     var that = this;
     wx.getStorage({
       key: 'current_user',
