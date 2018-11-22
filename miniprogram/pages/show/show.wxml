@@ -1,15 +1,65 @@
 <!--pages/show/show.wxml-->
 <view class='show-container'>
-  <view class='event-intro'>
+  <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{data.photo}}');">
+    <view>View more photos</view>
   </view>
-  <view class='event-address'>
-  </view>
-  <view class='event-users'>
-  </view>
-  <view class='event-description'>
+  <view class='event-info'>
+    <view class='event-intro'>
+      <view class='title-owner'>
+        <view class='event-title'>{{data.title}}</view>
+        <view class='owner'>
+          <image src="{{data.user.avatar}}" class='user-avatar' />
+        </view>
+      </view>
+      <view class='event-address'>
+        <view class='address-text'>{{data.address}}</view>
+      </view>
+      <view class='event-time'>
+        <view style="font-weight: bold;">Date</view>
+        <view>{{data.time}}</view>
+      </view>
+      <view class='event-ddl'>Register before {{data.deadline}}</view>
+    </view>
+
+    <view class='event-users'>
+
+      <view class='event-joiners'>
+        <view class='booking'>
+          <view class='booking-count'>{{data.bookings.length}}/{{data.capacity}}</view>
+        </view>
+        <view wx:for="{{data.bookings}}" wx:for-item="booking" wx:for-key="booking.id" class='event-user'>
+          <image src="{{booking.user.avatar}}" class='user-avatar' />
+        </view>
+      </view>
+    </view>
+    <view class='event-description'>
+      <view style="font-size: 30px; font-weight:bold;">Description</view>
+      <view class="description-text">{{data.description}}</view>
+    </view>
+    <view class="event-reviews">
+      <view style="font-size: 30px; font-weight:bold;">Reviews</view>
+      <view wx:for="{{data.reviews}}" wx:for-item="review" wx:for-key="review.id" class='review'>
+        <view class='review-info'>
+          <view class="review-rating">{{review.rating}}</view>
+          <view class="review-title">{{review.title}}</view>
+          <image src="{{review.booking_user.avatar}}" class='review-user user-avatar' />
+        </view>
+        <view class="review-content">{{review.content}}</view>
+      </view>
+    </view>
+
   </view>
   <view class='event-action'>
+    <!-- <block wx:if="{{user_id==data.user.id}}" >
+      <button class="btn" bindtap="deleteEvent">Delete</button>
+    </block> -->
+    <block wx:if="{{joined}}">
+      <button class="btn" bindtap="comment">Review</button>
+      <button class="btn" bindtap="cancelBooking">Cancel</button>
+    </block>
+    <block wx:if="{{!joined}}">
+      <button wx:if="{{user_id==data.user.id}}" class="btn" bindtap="deleteEvent">Delete</button>
+      <button wx:if="{{user_id!=data.user.id}}" class="btn" bindtap="createBooking">Join</button>
+    </block>
   </view>
 </view>
-<button class="btn" bindtap="createBooking">Join</button>
-<button class="btn" bindtap="comment">Review</button>

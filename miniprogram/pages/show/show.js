@@ -5,7 +5,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    joined: false
   },
 
   /**
@@ -29,7 +29,12 @@ Page({
       // url: 'http://localhost:3000/api/v1/events/' + options.id,
       method: 'GET',
       success: (res) => {
-        page.setData({user_id: current_user, data: res.data})
+        page.setData({user_id: current_user, data: res.data});
+        res.data.bookings.forEach((booking) => {
+          if (booking.user.id==current_user) {
+            page.setData({joined: true});
+          }
+        });
       }
     });
   },
