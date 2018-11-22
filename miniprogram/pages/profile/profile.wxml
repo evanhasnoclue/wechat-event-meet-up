@@ -27,8 +27,8 @@
       </view>
       <view class="weui-tab__panel">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                  <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id" >
-            <block if wx:if="{{profile.id==voyage.user.id}}" >
+                  <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id" ><block wx:for="{{voyage.bookings}}" wx:for-item="booking" wx:key="booking.id">
+            <block if wx:if="{{profile.id==booking.user_id}}" >
                       <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
 
             <view class="card-category">
@@ -48,6 +48,7 @@
             </view>
           </view>
             
+              </block>
             </block>
           </block>
         </view>
