@@ -1,4 +1,5 @@
 // pages/events/events.js
+let app = getApp()
 Page({
 
   /**
@@ -24,6 +25,11 @@ Page({
       url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       success(res) {
         page.setData(res.data),
+        //   console.log(12, page.data),
+        // console.log(13, page.data.events),
+        app.globalData.events = page.data.events,
+        console.log(11, res.data),
+        console.log(14, app.globalData)
         console.log(page.data.events[0])
       }
     })
@@ -42,6 +48,12 @@ Page({
     url: `../show/show?id=${event.id}`
   });
 },
+  onMap() {
+    wx.navigateTo({
+      url: '/pages/map/map'
+    });
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
