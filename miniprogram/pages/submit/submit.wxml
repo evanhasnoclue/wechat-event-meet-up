@@ -97,5 +97,6 @@
     </view>
   </view>
 
-  <button style="margin-bottom:50px " type="primary" form-type="submit" loading="{{loading}}">Submit</button>
-</form>
+
+<button  style="margin-bottom:50px "type="primary" formType="submit" loading="{{loading}}">Submit</button>
+  </form>

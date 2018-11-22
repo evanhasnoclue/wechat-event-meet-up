@@ -1,0 +1,12 @@
+<!--pages/review/review.wxml-->
+<!--pages/show/show.wxml-->
+<view class='show-container'>
+  <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{data.photo}}');">
+  </view>
+  <view class='event-info'>
+
+  </view>
+  <view class='event-action'>
+      <button class="btn" bindtap="addReview">Submit</button>
+  </view>
+</view>

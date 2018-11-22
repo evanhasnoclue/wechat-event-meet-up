@@ -5,6 +5,7 @@
     "pages/events/events",
     "pages/show/show",
     "pages/submit/submit",
+    "pages/review/review",
     "pages/profile/profile"
   ],
   "window": {

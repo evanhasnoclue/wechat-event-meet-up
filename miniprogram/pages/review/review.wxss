@@ -1,0 +1,45 @@
+/* pages/review/review.wxss */
+.show-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.event-photo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 200px;
+  width: 100%;
+}
+
+.event-info {
+  margin: -40px 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.event-action {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.btn {
+  width: 20%;
+  padding: 1px 2px;
+  background-color: #4b0;
+  color: white;
+  font-weight: bold;
+}

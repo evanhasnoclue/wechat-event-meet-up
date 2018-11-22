@@ -19,22 +19,23 @@ Page({
         if (res.data.gender=="1")
           {res.data.gender="男"}
         const profile = res.data;
-        that.setData({profile:profile})
-        console.log(profile)
+        that.setData({profile: profile})
       }
     })
 
     wx.request({
      // url: "http://localhost:3000/api/v1/events",
-      url: 'https://event-meet-up.herokuapp.com/api/v1/events',
+      url:'https://event-meet-up.herokuapp.com/api/v1/events',
       method: 'GET',
       success(res) {
+        console.log(res);
         const voyages = res.data.events;
 
         // Update local data
         that.setData({
           voyages
         });
+        console.log(that);
 
         // wx.hideToast();
       }
@@ -60,5 +61,12 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-  }
+  },
+
+  saveTel: function (data) {
+    console.log('data', data)
+    let tel = data.detail.value
+    console.log('saveTel', tel)
+  },
+  
 });

@@ -56,3 +56,7 @@ page,
   font-weight: lighter;
 }
 
+.weui-navbar{
+  background-color: white;
+}
+
