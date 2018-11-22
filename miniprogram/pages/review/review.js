@@ -47,7 +47,7 @@ Page({
         content: e.detail.value.Description
       },
       success: (res) => {
-        console.log(res)
+        console.log(res);
         wx.redirectTo({
           url: '/pages/profile/profile'
         })
