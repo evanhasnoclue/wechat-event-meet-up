@@ -40,6 +40,12 @@ Page({
     });
   },
 
+  onShareAppMessage: function () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
