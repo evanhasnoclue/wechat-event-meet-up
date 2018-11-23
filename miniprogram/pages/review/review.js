@@ -48,8 +48,8 @@ Page({
       },
       success: (res) => {
         console.log(res);
-        wx.switchTab({
-          url: '/pages/profile/profile'
+        wx.redirectTo({
+          url: `/pages/show/show?id=${page.data.event_id}`,
         })
       }
     })

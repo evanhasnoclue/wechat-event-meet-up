@@ -141,6 +141,12 @@
   width: 100%;
   font-size: 15px;
   font-weight: lighter;
+}
+
+.review-time {
+  width: 100%;
+  font-size: 10px;
+  color: rgb(100,100,100);
   margin-bottom: 30px;
 }
 

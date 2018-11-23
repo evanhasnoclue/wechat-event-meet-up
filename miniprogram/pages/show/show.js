@@ -13,6 +13,7 @@ Page({
    */
   onLoad: function (options) {
     console.log("loading");
+    console.log(options);
     let page = this;
     let current_user = 0;
     wx.getStorage({
