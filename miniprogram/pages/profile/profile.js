@@ -22,13 +22,14 @@ Page({
             icon: 'like',
             background: '#ed3f14'
           }
-          {
-            name: '返回',
-            width: 100,
-            color: '#80848f',
-            fontsize: '20',
-            icon: 'undo'
-          }
+          // ,
+          // {
+          //   name: '编辑',
+          //   width: 100,
+          //   color: '#80848f',
+          //   fontsize: '20',
+          //   icon: 'undo'
+          // }
         ],
         actions2: [{
           name: '取消',
