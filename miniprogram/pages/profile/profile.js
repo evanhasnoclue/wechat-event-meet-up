@@ -156,9 +156,10 @@ Page({
             url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}`,
             method: 'DELETE',
             success() {
-              wx.switchTab({
-                url: '/pages/events/events'
-              });
+              page.onLoad();
+              // wx.switchTab({
+              //   url: '/pages/events/events'
+              // });
             },
             fail: function (res) {
               wx.switchTab({
@@ -172,16 +173,18 @@ Page({
   },
   cancelBooking: function (e) {
     console.log(e)
+    let page = this;
     wx.request({
       url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}/bookings/${e.target.dataset.bookingid}`,
       method: 'DELETE',
       success() {
-        wx.redirectTo({
-          url: '/pages/events/events'
-        });
+        page.onLoad();
+        // wx.switchTab({
+        //   url: '/pages/profile/profile'
+        // });
       },
       fail: function (res) {
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/events/events'
         })
       },
