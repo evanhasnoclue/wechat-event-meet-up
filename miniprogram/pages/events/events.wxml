@@ -1,11 +1,11 @@
 <view class="page">
   <view class="banner">
-    <form bindsubmit='bindSearch'>
+    <!-- <form bindsubmit='bindSearch'>
       <view class='search-bar'>
           <image src="../../images/search.png" class='search-icon' type="primary" formType="submit"/>
         <textarea style="input" placeholder="Search trips" class="search-input" name="title" />
       </view>
-    </form>
+    </form> -->
     <button class="btn" bindtap="onCreate">New Trip</button>
   </view>
 
