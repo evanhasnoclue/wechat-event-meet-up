@@ -61,5 +61,32 @@ page,
   background-color: white;
 }
 
+.i-swipeout-demo-button-group{
+  display:flex;
+}
+
+.i-swipeout-demo-button{
+  color:'#fff';
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+
+
+}
+
+.edit{
+  background-color: #0099ff;
+  color:#fff;
+  
+}
+
+.delete{
+  background-color: #FF5733;
+  color: white;
+}
+
 
 

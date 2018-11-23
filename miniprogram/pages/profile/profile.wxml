@@ -76,13 +76,14 @@
 
             </view>
           </view> </block> -->
+          <!-- actions="{{actions}}" -->
 
           <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id">
             <block if wx:if="{{profile.id==voyage.user.id}}">
-              <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{voyage.id}}" actions="{{actions}}">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{voyage.id}}" >
                 <view slot="content">
                 
-                  <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="{{voyage}}     ">
+                  <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="{{voyage}}">
 
                     <view class="card-category">
                       {{voyage.address}}
@@ -101,6 +102,12 @@
                     </view>
                   </view>
                 </view>
+                <view slot="button" class="i-swipeout-demo-button-group">
+            <view bindtap="editEvent" class="i-swipeout-demo-button edit" id="{{voyage.id}}" >编辑</view>
+
+            <view bindtap="buttonDelete" class="i-swipeout-demo-button delete" id="{{voyage.id}}" >删除</view>
+            <!-- <view bindtap="buttonShare" class="i-swipeout-demo-button share" id="{{voyage.id}}" >分享</view> -->
+        </view>
               </i-swipeout>
             </block>
           </block>
