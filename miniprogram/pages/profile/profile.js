@@ -30,6 +30,16 @@ Page({
           //   icon: 'undo'
           // }
         ],
+        actions2: [{
+          name: '取消',
+          color: '#fff',
+          fontsize: '20',
+          width: 100,
+          icon: 'like',
+          background: '#0099ff'
+        }
+        ],
+
 
         tabs: ["参加活动", "创建活动"],
         activeIndex: 1,
@@ -146,12 +156,12 @@ Page({
             method: 'DELETE',
             success() {
               wx.redirectTo({
-                url: '/pages/index/index'
+                url: '/pages/events/events'
               });
             },
             fail: function (res) {
               wx.redirectTo({
-                url: '/pages/index/index'
+                url: '/pages/events/events'
               })
 
               // wx.showModal({
@@ -173,8 +183,9 @@ Page({
           },
 
   showVoyage: function (e) {
+    console.log(e.target)
     wx.navigateTo({
-      url: `../show/show?id=${e.currentTarget.id}`,
+      url: `../show/show?id=${e.target.dataset.voyage.id}`,
     })}
 
       });
