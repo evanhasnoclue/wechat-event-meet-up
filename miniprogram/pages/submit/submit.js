@@ -56,7 +56,7 @@ Page({
     date1: "2018-09-01",
     date2: "2018-09-10",
     time: "12:01",
-    region: ['上海', '上海市', '静安区'],
+    region: ['Shanghai','Shanghai','Jingan'],
     customItem: '全部',
 
     countryCodes: ["+86", "+80", "+84", "+87"],
@@ -133,7 +133,7 @@ Page({
       data: {
         user_id: page.data.user_id,
         title: e.detail.value.title,
-        address: e.detail.value.place,
+        address: e.detail.value.address,
         time: e.detail.value.time,
         description: e.detail.value.Description,
         deadline: e.detail.value.deadline,

@@ -5,7 +5,7 @@
 
 
     <view class="pickers">
-        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <picker id="region" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
           <button type="default" class='picker-btn'>Select Region</button>
         </picker>
             <!-- <picker  mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
