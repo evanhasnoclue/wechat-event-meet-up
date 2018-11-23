@@ -155,18 +155,20 @@ Page({
             url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}`,
             method: 'DELETE',
             success() {
-              wx.redirectTo({
+              wx.switchTab({
                 url: '/pages/events/events'
               });
             },
             fail: function (res) {
-              wx.redirectTo({
+              wx.switchTab({
                 url: '/pages/events/events'
               })
              },
           })
           },
-
+  onShow: function() {
+    this.onLoad();
+  },
   cancelBooking: function (e) {
     console.log(e)
     wx.request({
