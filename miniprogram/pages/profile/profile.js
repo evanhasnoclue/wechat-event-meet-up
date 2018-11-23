@@ -22,8 +22,9 @@ Page({
             icon: 'like',
             background: '#ed3f14'
           }
+          // ,
           // {
-          //   name: '返回',
+          //   name: '编辑',
           //   width: 100,
           //   color: '#80848f',
           //   fontsize: '20',
@@ -172,7 +173,7 @@ Page({
   cancelBooking: function (e) {
     console.log(e)
     wx.request({
-      url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}`,
+      url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}/bookings/${e.target.dataset.bookingid}`,
       method: 'DELETE',
       success() {
         wx.redirectTo({
