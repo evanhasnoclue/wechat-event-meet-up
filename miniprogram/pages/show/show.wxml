@@ -37,14 +37,16 @@
       <view class="description-text">{{data.description}}</view>
     </view>
     <view class="event-reviews">
-      <view style="font-size: 30px; font-weight:bold;">Reviews</view>
+      <view wx:if="{{data.reviews.length > 0}}" style="font-size: 30px; font-weight:bold;">Reviews</view>
       <view wx:for="{{data.reviews}}" wx:for-item="review" wx:for-key="review.id" class='review'>
         <view class='review-info'>
-          <view class="review-rating">{{review.rating}}</view>
+        <image src='../../images/star.png' class='rating-icon' style="width:40px;height:40px;"/>
+          <view class="review-rating">X{{review.rating}}</view>
           <view class="review-title">{{review.title}}</view>
           <image src="{{review.booking_user.avatar}}" class='review-user user-avatar' />
         </view>
         <view class="review-content">{{review.content}}</view>
+        <view class="review-time">{{review.date}}</view>
       </view>
     </view>
 

@@ -4,23 +4,24 @@
     <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{event.photo}}');">
     </view>
 
-    <view class='event-info'>
-      <view class='review-form'>
-        <!-- <form bindsubmit='bindSubmit'> -->
-        <view class='input-title'>Rating</view>
-        <view class="user-input">
-          <view class="rating">
-            <picker bindchange="bindStarChange" value="{{starIndex}}" range="{{stars}}" name="rating">
-              <view class="weui-select weui-select_in-select-after">{{stars[starIndex]}}</view>
-            </picker>
+      <view class='event-info'>
+        <view class='review-form'>
+          <!-- <form bindsubmit='bindSubmit'> -->
+          <view class='input-title'>Rating</view>
+          <view class="user-input">
+            <view class="rating">
+              <picker bindchange="bindStarChange" value="{{starIndex}}" range="{{stars}}" name="rating">
+                <view class="weui-select weui-select_in-select-after">{{stars[starIndex]}}</view>
+              </picker>
+            </view>
           </view>
+          <view class='input-title'>Title</view>
+          <textarea placeholder="Title of Review" class="user-input text-area-wrap" name="title" auto-height />
+          <view class='input-title'>Description</view>
+          <textarea class="user-input text-area-wrap" placeholder="Detail review content" rows="3" name='Description'></textarea>
         </view>
-        <view class='input-title'>Title</view>
-        <textarea placeholder="Title of Review" class="user-input text-area-wrap" name="title" auto-height />
-        <view class='input-title'>Description</view>
-        <textarea class="user-input text-area-wrap" placeholder="Detail review content" rows="3" name='Description'></textarea>
       </view>
-    </view>
+
     <view class='event-action'>
       <button class="btn" type="primary" formType="submit" loading="{{loading}}">Submit</button>
     </view>
