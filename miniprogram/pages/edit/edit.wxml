@@ -1,0 +1,99 @@
+
+  <view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <h1>Go Travel Together</h1>
+  </view>
+
+
+<form bindsubmit="bindSubmit">
+  <view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{title}}" style="input-size" placeholder="Title" class="input-height" name="title" maxlength="-1" auto-height />
+    </view>
+  </view>
+
+
+  <view class="section">
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        City：{{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="user-input">
+    <view class="text-area-wrap">
+      <textarea value="{{address}}" style="input-size" placeholder="Adress" class="input-height" name="address" maxlength="-1" auto-height />
+    </view>
+  </view>
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">Time</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker name='time' mode="date" value="{{date1}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange1">
+        <view class="weui-input">{{date1}}</view>
+      </picker>
+    </view>
+  </view>
+
+
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">Deadline</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker name='deadline' mode="date" value="{{date2}}" start="2018-09-01" end="2028-09-01" bindchange="bindDateChange2">
+        <view class="weui-input">{{date2}}</view>
+      </picker>
+    </view>
+  </view>
+
+
+
+  <view class="section section_gap">
+    <text class="section__title">Capacity</text>
+    <view class="body-view">
+      <slider name='capacity' bindchange="slider3change " min="1" max="10" show-value/>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">Description</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea name="Description" class="weui-textarea" placeholder="enter text" style="height: 3.3em" />
+        <view class="weui-textarea-counter">0/150</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view class="weui-uploader">
+          <view class="weui-uploader__hd">
+            <view class="weui-uploader__title">Upload</view>
+            <view class="weui-uploader__info">{{imageData.length}}/2</view>
+          </view>
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:for="{{imageData}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+
+
+            </view>
+            <view class="weui-uploader__input-box">
+              <view class="weui-uploader__input" bindtap="takePhoto"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+<button  style="margin-bottom:50px "type="primary" formType="submit" loading="{{loading}}">Submit</button>
+  </form>
