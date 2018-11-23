@@ -39,6 +39,7 @@ Page({
       }
     })
   },
+
   onCreate: function(e) {
     wx.redirectTo({
       url: '/pages/submit/submit',
@@ -69,8 +70,8 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function() {
-
+  onShow: function(options) {
+    this.onLoad(options);
   },
 
   /**
