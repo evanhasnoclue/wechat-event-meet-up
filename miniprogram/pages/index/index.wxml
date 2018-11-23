@@ -1,15 +1,15 @@
 <!--index.wxml-->
+<view class="wrapper">
 <view class="login-container">
 
   <!-- 用户 openid -->
+    <view class='welcome'>Welcome</view>
+    <view class='title'>Travel with Me</view>
   <view class="button-container">
-    <button 
-      open-type="getUserInfo" 
-      bindgetuserinfo="onGetUserInfo"
-      class="button"
-    >Login</button>
+    <button  open-type="getUserInfo" bindgetuserinfo="onGetUserInfo"  class="button">Wechat Login</button>
     </view>
 
+</view>
 </view>
 
 
