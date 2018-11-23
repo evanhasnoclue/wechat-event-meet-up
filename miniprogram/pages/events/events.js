@@ -28,7 +28,7 @@ Page({
       url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       success(res) {
         console.log(111, res.data)
-        page.setData(res.data)
+        page.setData({events:res.data.events.reverse()})
         // console.log(page.events)
         //   console.log(12, page.data),
         // console.log(13, page.data.events),
@@ -60,6 +60,9 @@ Page({
     });
   },
 
+  bindSearch: function(e) {
+
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
