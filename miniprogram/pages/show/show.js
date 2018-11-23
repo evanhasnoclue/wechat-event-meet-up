@@ -127,5 +127,31 @@ Page({
     else {
       console.log("user not joined yet")
     }
+  },
+  cancelBooking: function() {
+    const booking_id = this.data.booking.id;
+    const event_id = this.data.id;
+    wx.request({
+      url: `https://event-meet-up.herokuapp.com/api/v1/events/${event_id}/bookings/${booking_id}`,
+      method: 'DELETE',
+      success() {
+        wx.switchTab({
+          url: '/pages/profile/profile'
+        });
+      }
+    })
+  },
+
+  deleteEvent: function() {
+    const event_id = this.data.id;
+    wx.request({
+      url: `https://event-meet-up.herokuapp.com/api/v1/events/${event_id}`,
+      method: 'DELETE',
+      success() {
+        wx.switchTab({
+          url: '/pages/events/events'
+        });
+      }
+    })
   }
 })
