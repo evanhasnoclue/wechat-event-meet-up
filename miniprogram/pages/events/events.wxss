@@ -34,8 +34,9 @@
   background-position: center;
   color: white;
   position: relative;
-  margin-top: 0;
+  margin: 0 8px;
   margin-bottom: 10px;
+  border-radius: 5px;
   /* display: flex;
   justify-content: cspace-between;
   align-items: center */
@@ -63,8 +64,8 @@
   font-size: 24px;
 }
 .card-description .tag {
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 16px;
+  opacity: 0.9;
   font-weight: lighter;
 }
 .event-banner {
