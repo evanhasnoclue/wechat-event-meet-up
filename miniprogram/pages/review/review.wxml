@@ -3,7 +3,7 @@
   <view class='show-container'>
     <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{event.photo}}');">
     </view>
-    <scroll-view style="width:100%; height:80%;" scroll-y>
+
       <view class='event-info'>
         <view class='review-form'>
           <!-- <form bindsubmit='bindSubmit'> -->
@@ -21,7 +21,7 @@
           <textarea class="user-input text-area-wrap" placeholder="Detail review content" rows="3" name='Description'></textarea>
         </view>
       </view>
-    </scroll-view>
+
     <view class='event-action'>
       <button class="btn" type="primary" formType="submit" loading="{{loading}}">Submit</button>
     </view>
