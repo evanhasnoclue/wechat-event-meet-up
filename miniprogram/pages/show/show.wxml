@@ -59,7 +59,6 @@
     <block wx:if="{{joined}}">
       <button class="btn" bindtap="comment">Review</button>
       <button class="btn" bindtap="cancelBooking">Cancel</button>
-      <button class="btn" bindtap="shareEvent">Share</button>
     </block>
     <block wx:if="{{!joined}}">
       <button wx:if="{{user_id==data.user.id}}" class="btn" bindtap="deleteEvent">Delete</button>
