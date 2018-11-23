@@ -21,10 +21,10 @@
   position: absolute;
   right: -100%;
   top: 0;
-  height: 72%;
+  height: 100%;
   z-index: 1;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 .i-swipeout-button-right-item {
