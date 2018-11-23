@@ -29,7 +29,7 @@
     <view class="card-category"> {{item.address}}</view>
     <view class="card-description">
       <view class="name"> {{item.title}} </view>
-      <view class="tag"> {{item.time}} </view>
+      <view class="tag"> {{item.time}} <text wx:if="{{item.capacity != null}}">  max: {{item.capacity}} </text></view>
     </view>
 
   </view>
