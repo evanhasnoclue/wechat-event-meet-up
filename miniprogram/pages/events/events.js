@@ -9,7 +9,8 @@ Page({
     region: [],
     customItem: 'All',
     date: '',
-    time: ''
+    time: '',
+    filter: "Select Region"
   },
 
   /**
@@ -115,7 +116,8 @@ Page({
   bindRegionChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
-      region: e.detail.value
+      region: e.detail.value,
+      filter: e.detail.value.join("-")
     });
     wx.showToast({
       title: 'Updating',
