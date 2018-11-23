@@ -22,14 +22,14 @@ Page({
             icon: 'like',
             background: '#ed3f14'
           }
-          // ,
-          // {
-          //   name: '编辑',
-          //   width: 100,
-          //   color: '#80848f',
-          //   fontsize: '20',
-          //   icon: 'undo'
-          // }
+          ,
+          {
+            name: '编辑',
+            width: 100,
+            color: '#80848f',
+            fontsize: '20',
+            icon: 'undo'
+          }
         ],
         actions2: [{
           name: '取消',
@@ -58,6 +58,7 @@ Page({
         console.log(this.data.toggle, 111111111)
       },
       handleClickItem2() {
+        console.log("2222")
         const action = [...this.data.actions2];
         action[0].loading = true;
 
@@ -171,7 +172,6 @@ Page({
     this.onLoad();
   },
   cancelBooking: function (e) {
-    console.log(e)
     wx.request({
       url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}/bookings/${e.target.dataset.bookingid}`,
       method: 'DELETE',
@@ -187,6 +187,28 @@ Page({
       },
     })
   },
+
+  editEvent:function(e) {
+    console.log(`../edit/edit?id=${e.target.id}`)
+    wx.switchTab({
+      url: `../edit/edit?id=${e.target.id}`,
+      success: function() {
+        wx.redirectTo({
+          url: '/pages/events/events'
+        })
+      },
+    })
+  },
+
+
+
+  shareEvent: function () {
+  wx.showShareMenu({
+    withShareTicket: true
+  })
+  },
+
+  
 
   showVoyage: function (e) {
     console.log(e.target)
