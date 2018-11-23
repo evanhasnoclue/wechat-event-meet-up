@@ -149,7 +149,7 @@ Page({
   },
 
   deleteEvent: function() {
-    const event_id = this.data.id;
+    const event_id = this.data.data.id;
     wx.request({
       url: `https://event-meet-up.herokuapp.com/api/v1/events/${event_id}`,
       method: 'DELETE',
