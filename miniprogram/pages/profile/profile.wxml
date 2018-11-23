@@ -29,7 +29,7 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
           <block wx:for="{{voyages}}" wx:for-item="voyage" wx:key="voyage.id">
             <block wx:for="{{voyage.bookings}}" wx:for-item="booking" wx:key="booking.id">
-              <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonRedirect" id="{{voyage.id}}" actions="{{actions2}}">
+              <i-swipeout i-class="i-swipeout-demo-item" bind:change="cancelBooking" id="{{voyage.id}}" actions="{{actions2}}">
                 <view slot="content">          
               <block if wx:if="{{profile.id==booking.user_id}}">
                 <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="{{voyage}}">
@@ -82,7 +82,7 @@
               <i-swipeout i-class="i-swipeout-demo-item" bind:change="buttonDelete" id="{{voyage.id}}" actions="{{actions}}">
                 <view slot="content">
                 
-                  <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="voyage">
+                  <view bindtap="showVoyage" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url({{voyage.photo}});" data-voyage="{{voyage}}">
 
                     <view class="card-category">
                       {{voyage.address}}
