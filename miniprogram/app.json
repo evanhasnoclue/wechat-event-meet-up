@@ -6,7 +6,8 @@
     "pages/show/show",
     "pages/submit/submit",
     "pages/review/review",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/edit/edit"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
