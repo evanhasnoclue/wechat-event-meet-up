@@ -9,7 +9,8 @@ Page({
     region: [],
     customItem: 'All',
     date: '',
-    time: ''
+    time: '',
+    filter: "Select Region"
   },
 
   /**
@@ -28,7 +29,7 @@ Page({
       url: 'https://event-meet-up.herokuapp.com/api/v1/events',
       success(res) {
         console.log(111, res.data)
-        page.setData(res.data)
+        page.setData({events:res.data.events.reverse()})
         // console.log(page.events)
         //   console.log(12, page.data),
         // console.log(13, page.data.events),
@@ -60,6 +61,9 @@ Page({
     });
   },
 
+  bindSearch: function(e) {
+
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -112,7 +116,8 @@ Page({
   bindRegionChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({
-      region: e.detail.value
+      region: e.detail.value,
+      filter: e.detail.value.join("-")
     });
     wx.showToast({
       title: 'Updating',

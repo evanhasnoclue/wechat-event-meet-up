@@ -45,7 +45,7 @@
                     </view>
 
                     <view class="tag">
-                      {{voyage.description}}
+                      {{voyage.time}}
                     </view>
 
                   </view>
@@ -96,7 +96,7 @@
                       </view>
 
                       <view class="tag">
-                        {{voyage.description}}
+                        {{voyage.time}}
                       </view>
 
                     </view>

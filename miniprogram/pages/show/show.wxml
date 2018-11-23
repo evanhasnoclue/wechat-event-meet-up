@@ -2,6 +2,7 @@
 <view class='show-container'>
   <view class='event-photo' style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('{{data.photo}}');">
     <view>View more photos</view>
+    <image src="../../images/share.png" bindtap="onShareAppMessage" class="share-icon" />
   </view>
   <view class='event-info'>
     <view class='event-intro'>
