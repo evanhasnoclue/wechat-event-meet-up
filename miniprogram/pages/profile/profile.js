@@ -163,24 +163,27 @@ Page({
               wx.redirectTo({
                 url: '/pages/events/events'
               })
-
-              // wx.showModal({
-              //   title: '',
-              //   content: '',
-              //   showCancel: true,
-              //   cancelText: '',
-              //   cancelColor: '',
-              //   confirmText: '',
-              //   confirmColor: '',
-              //   success: function(res) {},
-              //   fail: function(res) {},
-              //   complete: function(res) {},
-              // })
              },
-
-
           })
           },
+
+  cancelBooking: function (e) {
+    console.log(e)
+    wx.request({
+      url: `https://event-meet-up.herokuapp.com/api/v1/events/${e.target.id}`,
+      method: 'DELETE',
+      success() {
+        wx.redirectTo({
+          url: '/pages/events/events'
+        });
+      },
+      fail: function (res) {
+        wx.redirectTo({
+          url: '/pages/events/events'
+        })
+      },
+    })
+  },
 
   showVoyage: function (e) {
     console.log(e.target)
@@ -189,3 +192,4 @@ Page({
     })}
 
       });
+
